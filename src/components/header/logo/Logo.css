@@ -1,0 +1,17 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm); 
+}
+
+.logo-image {
+  height: 60px;
+}
+
+.logo-container h1 {
+  margin: 0;
+  font-family: var(--ff-headings); 
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);
+  color: var(--clr-text-primary);
+}

@@ -3,7 +3,7 @@ import "./Navbar.css";
 
 export function Navbar () {
     return (
-    <nav>
+    <nav className="navbar">
         <ul>
             <li><NavLink to="/">Accueil</NavLink></li>
             <li><NavLink to="/movies">Les films</NavLink></li>

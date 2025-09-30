@@ -1,0 +1,9 @@
+.header {
+  padding: var(--spacing-md) var(--spacing-xl); 
+  background-color: var(--clr-surface);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+}
