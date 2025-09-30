@@ -1,0 +1,1 @@
+// tout les détails et les informations d'un film ou d'une série 

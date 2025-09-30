@@ -1,0 +1,1 @@
+// photo + titre d'un film ou d'une série ; s'utilise en complément du infoBlock

@@ -1,0 +1,1 @@
+// affiche l'aperçu d'UN seul film ou d'UNE série 

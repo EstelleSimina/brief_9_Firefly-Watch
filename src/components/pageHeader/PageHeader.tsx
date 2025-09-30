@@ -1,0 +1,1 @@
+// donner un simple titre pour la page MoviesList et SeriesList : par exemple "Films", et peut-être un court sous-titre comme "Parcourez notre catalogue complet".

@@ -1,0 +1,1 @@
+// regroupe les infos d'un acteur

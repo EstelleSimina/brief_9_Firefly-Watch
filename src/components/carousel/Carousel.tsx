@@ -1,0 +1,1 @@
+// affiche une liste horizontal de films ou séries
