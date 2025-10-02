@@ -1,11 +1,13 @@
 import { useFetch } from '../../hooks/useFetch';
 import type { ListMoviesResponse, MovieResult } from '../../types/api';
+import Banner from '../../components/banner/Banner';
 import Carousel from '../../components/carousel/Carousel';
 
 export function HomePage() {
   const popularMovies = useFetch<ListMoviesResponse>('/movie/popular');
   const topRatedMovies = useFetch<ListMoviesResponse>('/movie/top_rated');
   const upcomingMovies = useFetch<ListMoviesResponse>('/movie/upcoming');
+  const bannerData = popularMovies
 
   if (popularMovies.isLoading || topRatedMovies.isLoading || upcomingMovies.isLoading) {
     return <p>Chargement des films...</p>;
@@ -15,9 +17,26 @@ export function HomePage() {
   if (anyError) {
     return <p>Une erreur est survenue lors de la récupération des données.</p>;
   }
+  if (bannerData.error || topRatedMovies.error || upcomingMovies.error) {
+    return <p>Une erreur est survenue.</p>;
+  }
 
+  let randomBannerMovie: MovieResult | null = null;
+  if (bannerData.data && bannerData.data.results.length > 0) {
+    const movies = bannerData.data.results;
+    const random = Math.floor(Math.random() * movies.length);
+    randomBannerMovie = movies[random];
+  }
+  console.log("Film pour la bannière :", randomBannerMovie);
   return (
     <div>
+      {randomBannerMovie && (
+        <Banner
+          imageUrl={randomBannerMovie.backdrop_path}
+          title={randomBannerMovie.title}
+        />
+      )}
+
       {popularMovies.data && (
         <Carousel<MovieResult> 
             title="Films populaires" 

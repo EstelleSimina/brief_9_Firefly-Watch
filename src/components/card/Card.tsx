@@ -1,11 +1,11 @@
 import './Card.css';
+import { IMAGE_BASE_URL, IMAGE_SIZES } from '../../constants/api'; // On importe les constantes
 
 interface CardProps {
-  imageUrl: string;
+  imageUrl: string | null;
   title?: string; 
 }
 
-const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
 function Card({ imageUrl, title }: CardProps) {
   
@@ -13,11 +13,13 @@ function Card({ imageUrl, title }: CardProps) {
     return null;
   }
   
+  const finalImageUrl = `${IMAGE_BASE_URL}${IMAGE_SIZES.poster}${imageUrl}`;
+
   return (
     <div className="card">
       <img 
-        src={`${IMAGE_BASE_URL}${imageUrl}`} 
-        alt={title || 'Affiche'} 
+        src={finalImageUrl} 
+        alt={title || 'Affiche du film'} 
       />
     </div>
   );
