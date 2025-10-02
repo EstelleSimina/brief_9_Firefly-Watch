@@ -1,0 +1,21 @@
+/* Fichier : src/components/moviecard/MovieCard.css */
+.card {
+  width: 200px; /* Largeur fixe pour commencer */
+  background-color: #333;
+  border-radius: 8px;
+  overflow: hidden; /* Pour que l'image respecte les coins arrondis */
+  color: white;
+  scroll-snap-align: start; /* Chaque carte s'aimante au début du conteneur */
+  flex-shrink: 0; /* Empêche les cartes de se "tasser" si la fenêtre est trop petite */
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card h3 {
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+}

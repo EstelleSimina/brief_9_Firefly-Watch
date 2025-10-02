@@ -1,0 +1,30 @@
+/* Fichier : src/components/carousel/Carousel.css */
+.carousel-container {
+  margin-bottom: 2rem;
+}
+
+.carousel-title {
+  color: white;
+  margin-left: 1rem;
+}
+
+.carousel {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+
+  /* --- ON AMÉLIORE L'EXISTANT --- */
+  overflow-x: scroll; /* On passe de 'auto' à 'scroll' pour que ça marche partout */
+  
+  /* C'est ici la magie du carrousel moderne ! */
+  scroll-snap-type: x mandatory; /* On dit à l'axe X de devenir un "aimant" */
+  scroll-behavior: smooth; /* Pour un défilement plus doux */
+
+  /* Bonus : pour cacher la vilaine barre de défilement */
+  scrollbar-width: none; /* Pour Firefox */
+}
+
+/* Bonus : pour cacher la vilaine barre de défilement sur Chrome/Safari */
+.carousel::-webkit-scrollbar {
+  display: none;
+}
