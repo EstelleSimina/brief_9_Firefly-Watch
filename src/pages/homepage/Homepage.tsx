@@ -27,7 +27,6 @@ export function HomePage() {
     const random = Math.floor(Math.random() * movies.length);
     randomBannerMovie = movies[random];
   }
-  console.log("Film pour la bannière :", randomBannerMovie);
   return (
     <div>
       {randomBannerMovie && (
